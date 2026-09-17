@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>世界探究の扉 — ウクライナ支援 | 明星中学校・高等学校 探究委員会</title>
+<meta name="description" content="明星祭 探究企画「世界探究の扉」。ウクライナ支援の募金とメッセージを届けます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1730; --line:#23375e; --blue:#2E7CD6; --blue-d:#0057B7;
+  --yellow:#FFD200; --text:#F2F5FA; --muted:#9FB2CE; --card:#13233f;
+  --ok:#5AD19A; --warn:#FF8A8A;
+  --font:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+:root:not([data-theme="light"]){color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--navy);color:var(--text);font-family:var(--font);line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:52px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(21px,3.4vw,29px);margin:0 0 10px;font-weight:900}
+h3{font-size:16px;margin:24px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+.lead{color:var(--muted)}
+.kicker{font-size:12px;letter-spacing:.22em;color:var(--yellow);font-weight:700;margin:0 0 10px}
+.hero{padding:56px 0 40px}
+.flagmark{display:flex;width:56px;height:38px;border-radius:4px;overflow:hidden;margin-bottom:20px}
+.flagmark i{flex:1}.flagmark i:first-child{background:var(--blue-d)}.flagmark i:last-child{background:var(--yellow)}
+.hero h1{font-size:clamp(32px,7vw,58px);line-height:1.15;margin:0 0 14px;font-weight:900}
+.hero .sub{font-size:clamp(15px,2.2vw,19px);color:var(--yellow);font-weight:700;margin-bottom:16px}
+.hero .meta{color:var(--muted);font-size:14px}
+.grid{display:grid;gap:16px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.tally{background:linear-gradient(160deg,#16294b,#0d1c36);border:1px solid var(--line);border-radius:18px;padding:24px}
+.total{font-size:clamp(38px,9vw,70px);font-weight:900;line-height:1.05}
+.total small{font-size:.38em;font-weight:700;margin-left:6px;color:var(--muted)}
+.subtotal{color:var(--muted);font-size:14px;margin-top:6px}
+.routebar{position:relative;height:16px;background:#0a1730;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.routefill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--blue-d),var(--blue));border-radius:99px;transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.routemarks{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:8px}
+.routenow{margin-top:10px;font-weight:700;color:var(--yellow);font-size:15px}
+.tiers{border-collapse:collapse;width:100%;font-size:14px;margin-top:6px}
+.tiers th,.tiers td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+.tiers th{color:var(--muted);font-weight:500;font-size:12.5px}
+.tiers tr.hit td{color:var(--yellow);font-weight:700}
+.tiers tr.hit td:first-child::after{content:" ✓"}
+label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px;font-weight:500}
+input[type=text],input[type=number],textarea{width:100%;background:#0b1a33;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;font-size:16px;padding:12px 14px}
+textarea{min-height:88px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:1px}
+.uk{margin-top:10px;background:#0f1f3b;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:12px 14px;min-height:56px}
+.uk .lbl{font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+.uk .body{font-size:17px;font-weight:700;margin-top:2px;word-break:break-word}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.quick button{background:#0b1a33;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px 10px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;text-align:left;line-height:1.5}
+.quick button span{display:block;font-size:12px;font-weight:500;color:var(--blue);margin-top:2px}
+.quick button:hover{border-color:var(--blue)}
+button.primary{margin-top:16px;width:100%;background:var(--yellow);color:#14213d;border:0;border-radius:12px;padding:15px 18px;font:inherit;font-weight:900;font-size:16px;cursor:pointer}
+button.primary:disabled{opacity:.5;cursor:default}
+.checkrow{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.status{margin-top:12px;font-size:14px;min-height:22px}
+.status.ok{color:var(--ok)}.status.ng{color:var(--warn)}.status.wait{color:var(--muted)}
+.hidden{display:none !important}
+.doveStage{background:radial-gradient(120% 90% at 50% 0%,#17305b 0%,#0a1730 70%);border:1px solid var(--line);border-radius:18px;padding:12px}
+.doveStage svg{display:block;width:100%;height:auto}
+.stageInfo{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;margin-top:10px;font-size:13.5px;color:var(--muted)}
+.stageInfo b{color:var(--yellow);font-size:15px}
+.tile{cursor:pointer}.tile:hover{opacity:.8}
+.bubble{margin-top:14px;background:#0f1f3b;border:1px solid var(--line);border-left:4px solid var(--yellow);border-radius:10px;padding:14px 16px;min-height:62px}
+.bubble .t{font-size:16px}.bubble .u{font-size:14px;color:var(--blue);font-weight:700;margin-top:4px}
+.bubble .n{font-size:12px;color:var(--muted);margin-top:6px}
+.msglist{display:grid;gap:10px;margin-top:16px}
+@media(min-width:760px){.msglist{grid-template-columns:1fr 1fr}}
+.msg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.msg .uk2{color:var(--blue);font-weight:700;font-size:13px;margin-top:4px}
+.msg .who{color:var(--muted);font-size:12px;margin-top:6px}
+.badge{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:99px;padding:3px 10px;color:var(--muted);margin-right:6px}
+.overflow{overflow-x:auto}
+a{color:var(--yellow)}
+footer{padding:36px 0 56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+#qrbox{background:#fff;padding:12px;border-radius:12px;display:inline-block;line-height:0}
+.qrwrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="flagmark"><i></i><i></i></div>
+    <p class="kicker">明星祭 2026 ／ 探究企画</p>
+    <h1>世界探究の扉</h1>
+    <p class="sub">「知る」から『共に生きる』へ 〜ウクライナと歴史から考える私たちの未来〜</p>
+    <p class="meta">明星中学校・高等学校 探究委員会　／　9月19日（土）・20日（日）　306教室</p>
+  </header>
+
+  <section>
+    <p class="kicker">はじまり</p>
+    <h2>ヤンナさんとの出会い</h2>
+    <p>2026年6月20日、ウクライナ出身の <b>マツダ・ヤンナさん</b> が306教室に来てくださいました。</p>
+    <p class="lead">授業を聞く前、私たちがウクライナについて知っていたことは、ほとんど「戦争」だけでした。けれどヤンナさんが最初に見せてくれたのは、青空と小麦畑の写真でした。</p>
+    <p class="lead">ウクライナを「かわいそうな国」としてではなく、同じように毎日を生きている人の国として知ってもらうこと。そして、知って終わりにしないこと。それがこの企画です。</p>
+  </section>
+
+  <section>
+    <p class="kicker">見える化</p>
+    <h2>いま、ここまで届いています</h2>
+    <div class="tally">
+      <div class="total"><span id="totalYen">—</span><small>円</small></div>
+      <div class="subtotal"><span id="entryCount">0</span>件のご支援　／　最終更新 <span id="updatedAt">—</span></div>
+      <h3 style="margin-top:24px">救急車は、ここまで進みました</h3>
+      <p class="lead" style="font-size:14px">支援先のNPO法人ユーラシアは、使われなくなった救急車・消防車を岡山県倉敷市の水島港からウクライナへ送っています。水島港からキーウまでは約10,000km。同法人は、3,000円でおよそ20km進むと示しています。</p>
+      <div class="routebar"><div class="routefill" id="routefill"></div></div>
+      <div class="routemarks"><span>水島港（岡山）</span><span>10,000km</span><span>キーウ</span></div>
+      <div class="routenow" id="routenow">0 km</div>
+      <h3>金額でできること</h3>
+      <div class="overflow">
+        <table class="tiers" id="tiers">
+          <thead><tr><th>金額</th><th>できること</th></tr></thead>
+          <tbody>
+            <tr data-amount="3000"><td>3,000円</td><td>救急車が 20km 進む（前線のグレーゾーンと同じ幅）</td></tr>
+            <tr data-amount="10000"><td>10,000円</td><td>救急車が 66km 進む</td></tr>
+            <tr data-amount="30000"><td>30,000円</td><td>救急車が 660km 進む</td></tr>
+            <tr data-amount="150000"><td>150,000円</td><td>車両1台分の輸送費の 10分の1</td></tr>
+            <tr data-amount="1500000"><td>1,500,000円</td><td>救急車を1台、現地に届けられる</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">※ 距離は輸送・通関・搬送などの平均的な費用をもとにした目安です。実際の費用は時期や為替で変わります。</p>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <p style="margin:0 0 6px"><span class="badge">2010年設立</span><span class="badge">岡山県倉敷市</span><span class="badge">特定非営利活動法人</span></p>
+      <h3 style="margin-top:0">支援先：NPO法人ユーラシア（NPO EURASIA）</h3>
+      <p class="lead" style="font-size:14px">もともとはウクライナの文化を日本に紹介してきた団体です。2025年に在日ウクライナ大使館が寄付受付口座を閉じたあと、支援を続ける団体として大使館の公式Xで紹介されました。救急車・消防車の輸送、止血剤などの医療物資の送付、日本へ避難してきた人の生活支援を行っています。2025年9月2日には、救急車2台・消防車2台が水島港からフメリニツキー州・ミコライウ州・ハルキウ州へ向けて出発しました。</p>
+      <p style="margin:10px 0 0"><a href="https://npoeurasia.org" target="_blank" rel="noopener">npoeurasia.org</a></p>
+      <p class="note">募金の管理は教員が行い、生徒は現金に触れません。明星祭終了後にNPO法人ユーラシアへ送金し、金額と送金の報告を校内に掲示します。</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">参加する</p>
+    <h2>メッセージを送る</h2>
+    <p class="lead">日本語で書くと、ウクライナ語に変換されます。ボタンを押すだけでも送れます。</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="quick" id="quick"></div>
+
+        <label for="msg">自分のことばで書く（140字まで）</label>
+        <textarea id="msg" maxlength="140" placeholder="例：小麦畑の写真がきれいでした。行ってみたい国になりました。"></textarea>
+        <div class="uk" id="ukBox">
+          <div class="lbl">УКРАЇНСЬКОЮ ／ ウクライナ語</div>
+          <div class="body" id="ukText">—</div>
+        </div>
+
+        <label for="nickname">お名前・ニックネーム（任意）</label>
+        <input type="text" id="nickname" maxlength="20" placeholder="例：中2 たきや">
+
+        <label for="amount">募金額（任意・円）</label>
+        <input type="number" id="amount" min="0" max="1000000" step="1" inputmode="numeric" placeholder="例：500">
+
+        <div class="checkrow">
+          <input type="checkbox" id="byStaff" style="width:auto">
+          <label for="byStaff" style="margin:0">係の生徒が代わりに入力しています</label>
+        </div>
+
+        <button class="primary" id="submitBtn">送信する</button>
+        <div class="status" id="status"></div>
+        <p class="note">誹謗中傷、差別、暴力をあおる内容、個人情報、宣伝、ウクライナへの侵攻を正当化する内容は掲示されません。</p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">届いたメッセージ</h3>
+        <div class="msglist" id="msglist"></div>
+        <p class="note" id="msgEmpty">まだメッセージはありません。最初の一言をどうぞ。</p>
+
+        <h3>このページのQRコード</h3>
+        <div class="qrwrap">
+          <div id="qrbox"></div>
+          <p class="note" style="margin:0;flex:1;min-width:180px">印刷して募金箱の横に貼ってください。スマホで読み取れば、この画面が開きます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">平和の鳩</p>
+    <h2>メッセージが、一羽の鳩になります</h2>
+    <p class="lead">届いたメッセージが1枚ずつ羽根になって、鳩を形づくっていきます。数が増えるほど、鳩の姿は変わります。羽根をクリックすると、その人のメッセージが読めます。</p>
+    <div class="doveStage">
+      <svg id="doveSvg" viewBox="0 0 900 620" role="img" aria-label="メッセージでできた平和の鳩"></svg>
+    </div>
+    <div class="stageInfo">
+      <span>いまの段階　<b id="stageName">たまご</b></span>
+      <span>メッセージ <b id="msgCount">0</b> 件</span>
+      <span id="nextStage">あと 1 件で つぎの段階へ</span>
+    </div>
+    <div class="bubble" id="bubble"><div class="t">羽根をクリックすると、メッセージが表示されます。</div><div class="u"></div><div class="n"></div></div>
+  </section>
+
+  <footer>
+    明星中学校・高等学校　探究委員会　／　顧問：八幡 幸司<br>
+    出典：マツダ・ヤンナさん講演資料（2026年6月20日 本校306教室）、NPO法人ユーラシア公式サイト
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ============================================================
+   設定：Google Apps Script でデプロイしたウェブアプリの URL を貼る
+   （空のままだと「おためしモード」で動きます。保存はされません）
+   ============================================================ */
+var API_URL = "";
+
+(function(){
+  "use strict";
+  var YEN_PER_KM=150, ROUTE_KM=10000;
+  var NG=["死ね","しね","殺す","ころす","バカ","ばか","アホ","あほ","キモ","うざ","消えろ","ブス","カス","クズ","http://","https://","www."];
+  var entries=[], demo=!API_URL, jsonpId=0, tTimer=null;
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function yen(n){return (n||0).toLocaleString("ja-JP");}
+  function fmtDate(ts){ if(!ts) return ""; var d=new Date(ts);
+    return (d.getMonth()+1)+"月"+d.getDate()+"日 "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2); }
+
+  /* ---------- JSONP（GitHub Pages から Google Apps Script を呼ぶ） ---------- */
+  function call(params){
+    return new Promise(function(resolve,reject){
+      if(demo){ reject(new Error("demo")); return; }
+      var cb="__ukcb"+(++jsonpId);
+      var timer=setTimeout(function(){ cleanup(); reject(new Error("timeout")); },12000);
+      function cleanup(){ clearTimeout(timer); try{delete window[cb];}catch(e){window[cb]=undefined;}
+        if(s.parentNode) s.parentNode.removeChild(s); }
+      window[cb]=function(data){ cleanup(); resolve(data); };
+      var q=[]; for(var k in params){ q.push(encodeURIComponent(k)+"="+encodeURIComponent(params[k])); }
+      q.push("callback="+cb);
+      var s=document.createElement("script");
+      s.src=API_URL+(API_URL.indexOf("?")>=0?"&":"?")+q.join("&");
+      s.onerror=function(){ cleanup(); reject(new Error("network")); };
+      document.head.appendChild(s);
+    });
+  }
+
+  /* ---------- ワンタップ投稿 ---------- */
+  var QUICK=[
+    {ja:"平和！",                  uk:"Мир!"},
+    {ja:"ウクライナを応援しています", uk:"Ми підтримуємо Україну!"},
+    {ja:"ありがとう",              uk:"Дякую!"},
+    {ja:"日本から応援しています",    uk:"Підтримуємо вас з Японії!"}
+  ];
+  (function(){
+    var box=$("quick");
+    QUICK.forEach(function(q){
+      var b=document.createElement("button");
+      b.innerHTML=esc(q.ja)+"<span>"+esc(q.uk)+"</span>";
+      b.addEventListener("click",function(){ send(q.ja,q.uk); });
+      box.appendChild(b);
+    });
+  })();
+
+  /* ---------- 日本語 → ウクライナ語 ---------- */
+  var lastTranslated={ja:"",uk:""};
+  function setUk(text,pending){
+    $("ukText").textContent = text || (pending?"変換しています…":"—");
+  }
+  $("msg").addEventListener("input",function(){
+    var v=$("msg").value.trim();
+    if(tTimer) clearTimeout(tTimer);
+    if(!v){ lastTranslated={ja:"",uk:""}; setUk(""); return; }
+    var hit=null;
+    QUICK.forEach(function(q){ if(q.ja===v) hit=q.uk; });
+    if(hit){ lastTranslated={ja:v,uk:hit}; setUk(hit); return; }
+    setUk("",true);
+    tTimer=setTimeout(function(){
+      call({action:"translate",text:v}).then(function(r){
+        if($("msg").value.trim()!==v) return;
+        var uk=(r&&r.uk)||"";
+        lastTranslated={ja:v,uk:uk};
+        setUk(uk||"（変換できませんでした。日本語のまま送れます）");
+      }).catch(function(){
+        if($("msg").value.trim()!==v) return;
+        lastTranslated={ja:v,uk:""};
+        setUk(demo?"（おためしモードでは変換されません）":"（変換できませんでした。日本語のまま送れます）");
+      });
+    },700);
+  });
+
+  /* ---------- 送信 ---------- */
+  function setStatus(t,c){ var s=$("status"); s.textContent=t; s.className="status "+(c||""); }
+  function localOK(t){ var l=t.toLowerCase(); for(var i=0;i<NG.length;i++){ if(l.indexOf(NG[i].toLowerCase())>=0) return false; } return true; }
+
+  function send(message,uk){
+    var nickname=$("nickname").value.trim();
+    var amount=Math.max(0,Math.min(1000000,Math.floor(Number($("amount").value)||0)));
+    var staff=$("byStaff").checked;
+    if(!message && !amount){ setStatus("メッセージか金額のどちらかを入力してください。","ng"); return; }
+    if(message && !localOK(message)){ setStatus("このことばは掲示できません。書き直してください。","ng"); return; }
+    $("submitBtn").disabled=true; setStatus("送信しています…","wait");
+    var payload={action:"add",message:message||"",uk:uk||"",nickname:nickname,amount:amount,source:staff?"staff":"visitor"};
+
+    if(demo){
+      entries.unshift({message:payload.message,uk:payload.uk,nickname:nickname,amount:amount,
+        approved:!!payload.message,createdAt:Date.now()});
+      after(true,"（おためしモード：保存されていません）");
+      return;
+    }
+    call(payload).then(function(r){
+      if(r&&r.ok===false){ after(false,r.reason||"掲示できない内容が含まれています。"); return; }
+      load(); after(true,"");
+    }).catch(function(){
+      $("submitBtn").disabled=false;
+      setStatus("送信できませんでした。電波の良い場所でもう一度お試しください。","ng");
+    });
+
+    function after(ok,extra){
+      $("submitBtn").disabled=false;
+      $("msg").value=""; $("amount").value=""; setUk("");
+      lastTranslated={ja:"",uk:""};
+      if(ok) setStatus("ありがとうございます。鳩に羽根が1枚増えました。"+(extra||""),"ok");
+      else   setStatus("ありがとうございます。ただしこのメッセージは掲示できませんでした。"+(extra||""),"ng");
+      render();
+    }
+  }
+
+  $("submitBtn").addEventListener("click",function(){
+    var v=$("msg").value.trim();
+    var uk=(lastTranslated.ja===v)?lastTranslated.uk:"";
+    send(v,uk);
+  });
+
+  /* ---------- 読み込み ---------- */
+  function load(){
+    if(demo){ render(); return; }
+    call({action:"list"}).then(function(r){
+      entries=(r&&r.entries)||[];
+      render();
+    }).catch(function(){ render(); });
+  }
+
+  /* ---------- 鳩 ---------- */
+  var SVG="http://www.w3.org/2000/svg";
+  var BODY={cx:430,cy:372,rx:248,ry:128}, HEAD={cx:678,cy:258,r:86},
+      WING={cx:412,cy:230,rx:200,ry:88,rot:-20*Math.PI/180}, TAIL={cx:168,cy:382,rx:118,ry:52};
+  function inEll(x,y,e){var dx=x-e.cx,dy=y-e.cy;return (dx/e.rx)*(dx/e.rx)+(dy/e.ry)*(dy/e.ry)<=0.9;}
+  function inWing(x,y){var dx=x-WING.cx,dy=y-WING.cy,c=Math.cos(-WING.rot),s=Math.sin(-WING.rot);
+    var rx=dx*c-dy*s,ry=dx*s+dy*c;return (rx/WING.rx)*(rx/WING.rx)+(ry/WING.ry)*(ry/WING.ry)<=0.88;}
+  function inBody(x,y){ if(inEll(x,y,BODY))return true; if(inEll(x,y,TAIL))return true;
+    var dx=x-HEAD.cx,dy=y-HEAD.cy; return dx*dx+dy*dy<=(HEAD.r*0.9)*(HEAD.r*0.9); }
+  var STAGES=[{min:0,name:"たまご",cell:52,glow:0,rays:false,stars:0},
+    {min:1,name:"うまれる",cell:46,glow:0,rays:false,stars:0},
+    {min:10,name:"はばたく",cell:38,glow:.15,rays:false,stars:6},
+    {min:30,name:"飛びたつ",cell:32,glow:.25,rays:false,stars:12},
+    {min:60,name:"空をわたる",cell:26,glow:.35,rays:true,stars:20},
+    {min:100,name:"届く",cell:22,glow:.5,rays:true,stars:34}];
+  function stageOf(n){var s=STAGES[0];for(var i=0;i<STAGES.length;i++){if(n>=STAGES[i].min)s=STAGES[i];}return s;}
+  function nextStage(n){for(var i=0;i<STAGES.length;i++){if(STAGES[i].min>n)return STAGES[i];}return null;}
+  function el(t,a){var n=document.createElementNS(SVG,t);for(var k in a){n.setAttribute(k,a[k]);}return n;}
+  function cells(size){
+    var out=[];
+    for(var y=110;y<520;y+=size){ for(var x=40;x<800;x+=size){
+      var cx=x+size/2, cy=y+size/2;
+      if(inWing(cx,cy)) out.push({x:x,y:y,zone:"wing"});
+      else if(inBody(cx,cy)) out.push({x:x,y:y,zone:"body"});
+    }}
+    var seed=7;
+    for(var i=out.length-1;i>0;i--){ seed=(seed*1103515245+12345)%2147483648;
+      var j=seed%(i+1), t=out[i]; out[i]=out[j]; out[j]=t; }
+    return out;
+  }
+  function drawDove(){
+    var svg=$("doveSvg"); while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var msgs=entries.filter(function(e){return e.approved&&e.message;});
+    var n=msgs.length, st=stageOf(n);
+    var defs=el("defs"), g=el("radialGradient",{id:"halo",cx:"50%",cy:"45%",r:"60%"});
+    g.appendChild(el("stop",{offset:"0%","stop-color":"#FFD200","stop-opacity":st.glow}));
+    g.appendChild(el("stop",{offset:"100%","stop-color":"#FFD200","stop-opacity":"0"}));
+    defs.appendChild(g); svg.appendChild(defs);
+    svg.appendChild(el("rect",{x:0,y:0,width:900,height:620,fill:"url(#halo)"}));
+    for(var s=0;s<st.stars;s++){
+      var sx=(s*137)%880+10, sy=(s*211)%600+10;
+      if(inBody(sx,sy)||inWing(sx,sy)) continue;
+      svg.appendChild(el("circle",{cx:sx,cy:sy,r:(s%3)*0.8+1,fill:"#fff",opacity:0.25+((s%4)*0.12)}));
+    }
+    if(st.rays){ for(var r=0;r<12;r++){ var a=(r/12)*Math.PI*2;
+      svg.appendChild(el("line",{x1:450+Math.cos(a)*170,y1:310+Math.sin(a)*140,
+        x2:450+Math.cos(a)*400,y2:310+Math.sin(a)*330,stroke:"#FFD200","stroke-width":1.2,opacity:0.16})); } }
+    var ol={fill:"none",stroke:"#7FA0CE","stroke-width":3,opacity:n?0.55:0.9};
+    function add(tag,attrs){ var o={}; for(var k in ol)o[k]=ol[k]; for(var k2 in attrs)o[k2]=attrs[k2];
+      svg.appendChild(el(tag,o)); }
+    add("ellipse",{cx:TAIL.cx,cy:TAIL.cy,rx:TAIL.rx,ry:TAIL.ry});
+    add("ellipse",{cx:BODY.cx,cy:BODY.cy,rx:BODY.rx,ry:BODY.ry});
+    add("circle",{cx:HEAD.cx,cy:HEAD.cy,r:HEAD.r});
+    add("ellipse",{cx:WING.cx,cy:WING.cy,rx:WING.rx,ry:WING.ry,transform:"rotate(-20 "+WING.cx+" "+WING.cy+")"});
+    svg.appendChild(el("polygon",{points:"760,252 812,268 760,284",fill:"#FFD200",opacity:n?1:0.5}));
+    svg.appendChild(el("circle",{cx:706,cy:240,r:8,fill:"#0A1730",stroke:"#7FA0CE","stroke-width":2}));
+    svg.appendChild(el("path",{d:"M812 276 q60 8 104 -18",stroke:"#5AD19A","stroke-width":4,fill:"none",opacity:n>=10?1:0.35}));
+    svg.appendChild(el("ellipse",{cx:880,cy:250,rx:17,ry:10,fill:"#5AD19A",opacity:n>=10?1:0.35,transform:"rotate(-20 880 250)"}));
+    svg.appendChild(el("ellipse",{cx:852,cy:266,rx:17,ry:10,fill:"#5AD19A",opacity:n>=10?1:0.35,transform:"rotate(15 852 266)"}));
+    var cs=cells(st.cell), used=Math.min(n,cs.length);
+    for(var i=0;i<used;i++){
+      var c=cs[i], m=msgs[i];
+      var t=el("rect",{x:c.x+1,y:c.y+1,width:st.cell-3,height:st.cell-3,rx:Math.max(2,st.cell*0.16),
+        fill:c.zone==="wing"?"#2E7CD6":"#FFD200",opacity:0.72+((i%5)*0.056),
+        transform:"rotate("+(((i*37)%13)-6)+" "+(c.x+st.cell/2)+" "+(c.y+st.cell/2)+")"});
+      t.setAttribute("class","tile"); t.setAttribute("tabindex","0");
+      (function(msg){ function show(){ showBubble(msg); }
+        t.addEventListener("click",show);
+        t.addEventListener("keydown",function(ev){ if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();show();} });
+      })(m);
+      svg.appendChild(t);
+    }
+    if(n>cs.length){
+      var more=el("text",{x:450,y:585,"text-anchor":"middle",fill:"#9FB2CE","font-size":"20"});
+      more.textContent="＋ さらに "+(n-cs.length)+" 件のメッセージ"; svg.appendChild(more);
+    }
+    $("stageName").textContent=st.name; $("msgCount").textContent=n;
+    var nx=nextStage(n);
+    $("nextStage").textContent=nx?("あと "+(nx.min-n)+" 件で「"+nx.name+"」へ"):"すべての段階に届きました";
+  }
+  function showBubble(m){
+    var b=$("bubble");
+    b.querySelector(".t").textContent=m.message;
+    b.querySelector(".u").textContent=m.uk||"";
+    b.querySelector(".n").textContent=(m.nickname?m.nickname+" さん":"匿名")+"　"+fmtDate(m.createdAt);
+  }
+
+  /* ---------- 描画 ---------- */
+  function render(){
+    var total=0,count=0,latest=0;
+    entries.forEach(function(e){
+      total+=Number(e.amount)||0;
+      if((Number(e.amount)||0)>0||(e.message&&e.approved)) count++;
+      if(e.createdAt>latest) latest=e.createdAt;
+    });
+    $("totalYen").textContent=yen(total);
+    $("entryCount").textContent=count;
+    $("updatedAt").textContent=latest?fmtDate(latest):"—";
+    var km=Math.floor(total/YEN_PER_KM);
+    $("routenow").textContent=yen(km)+" km 進みました"+(km>=ROUTE_KM?"　キーウに到着しました":"");
+    $("routefill").style.width=Math.min(100,(km/ROUTE_KM)*100)+"%";
+    Array.prototype.forEach.call(document.querySelectorAll("#tiers tbody tr"),function(tr){
+      tr.classList.toggle("hit",total>=Number(tr.getAttribute("data-amount")));
+    });
+    var msgs=entries.filter(function(e){return e.approved&&e.message;})
+      .sort(function(a,b){return b.createdAt-a.createdAt;});
+    var list=$("msglist"); list.innerHTML="";
+    msgs.slice(0,30).forEach(function(m){
+      var d=document.createElement("div"); d.className="msg";
+      d.innerHTML="<div>"+esc(m.message)+"</div>"+(m.uk?"<div class='uk2'>"+esc(m.uk)+"</div>":"")+
+        "<div class='who'>"+esc(m.nickname||"匿名")+"　"+fmtDate(m.createdAt)+"</div>";
+      list.appendChild(d);
+    });
+    $("msgEmpty").classList.toggle("hidden",msgs.length>0);
+    drawDove();
+  }
+
+  /* ---------- QR ---------- */
+  function drawQR(){
+    try{
+      if(typeof QRCode==="undefined"){ $("qrbox").parentNode.style.display="none"; return; }
+      new QRCode($("qrbox"),{text:location.href.split("#")[0],width:150,height:150,
+        colorDark:"#0A1730",colorLight:"#ffffff"});
+    }catch(e){ $("qrbox").parentNode.style.display="none"; }
+  }
+
+  render(); drawQR(); load();
+  setInterval(load,20000);
+  if(demo) setStatus("おためしモードです（API_URL が未設定のため保存されません）。","wait");
+})();
+</script>
+</body>
+</html>
